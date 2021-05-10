@@ -19,10 +19,8 @@ legusta(jose,carne).
 legusta(jose,cerveza).
 
 % Ejercicio 2.1
-legusta(juan,pasta) .
+legusta(juan,X):- legusta(maria,X).
 
 % Ejercicio 2.2
-legusta(juan,maria) .
-legusta(juan,jose) .
-legusta(juan,juan) .
+legusta(juan,X):- legusta(X,pasta).
 
