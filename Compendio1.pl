@@ -10,3 +10,17 @@ progenitor(elena,fernando).
 progenitor(elena,silvia).
 progenitor(eva,emilio).
 progenitor(david,emilio).
+
+legusta(maria,pasta) .
+legusta(juan,carne) .
+legusta(juan,vino).
+legusta(jose,pasta).
+legusta(jose,carne).
+legusta(jose,cerveza).
+
+% Ejercicio 2.1
+legusta(juan,X):- legusta(maria,X).
+
+% Ejercicio 2.2
+legusta(juan,X):- legusta(X,pasta).
+
