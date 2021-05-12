@@ -15,6 +15,8 @@ tio(Tio,Sobrino):- progenitor(Padre,Sobrino),hermano(Tio,Padre).
 % Ejercicio 1.2
 primo(X,Y):-progenitor(PadreX,X),progenitor(PadreY,Y),hermano(PadreX,PadreY).
 
+tipoComida(cerveza,alcohol).
+tipoComida(vino,alcohol).
 
 legusta(maria,pasta).
 legusta(juan,carne).
@@ -30,10 +32,6 @@ legusta(juan,X):- legusta(maria,X).
 legusta(juan,X):- legusta(X,pasta).
 
 % Ejercicio 2.3
-% Para realizar este ejercicio se necesita crear una regla en la cual se
-% especifica cuales alimentos son bebidas alcoholicas
 legusta(juan,X):- tipoComida(Comida,alcohol),legusta(X,Comida).
 
 
-tipoComida(cerveza,alcohol).
-tipoComida(vino,alcohol).
