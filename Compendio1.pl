@@ -12,5 +12,5 @@ progenitor(david,emilio).
 
 hermano(X,Y):- progenitor(Z,X), progenitor(Z,Y).
 pareja(X,Y):- progenitor(X,Z), progenitor(Y,Z).
-%suegro(Suegro,Yerno):-.
-%cunado(X,Y):-.
+suegro(Suegro,Yerno):- pareja(Yerno,X),progenitor(Suegro,X).
+cunado(Esposo,Cunado):- pareja(Esposo, X), hermano(Cunado,X).
