@@ -15,6 +15,20 @@ tio(Tio,Sobrino):- progenitor(Padre,Sobrino),hermano(Tio,Padre).
 % Ejercicio 1.2
 primo(X,Y):-progenitor(PadreX,X),progenitor(PadreY,Y),hermano(PadreX,PadreY).
 
+% Ejercicio 1.3
+% Si 2 personas tienen un hijo en comun es considerado una pareja.
+pareja(X,Y):- progenitor(X,Z), progenitor(Y,Z).
+
+% Ejercicio 1.4
+% Usando la regla creada anteriormente podemos definir a suegro
+% como el progenitor de la pareja X del yerno o nuera
+suegro(Suegro,Yerno):- pareja(Yerno,X),progenitor(Suegro,X).
+
+% Ejercicio 1.5
+% Cuñado es algo mas sencillo solo usando las reglas pareja y hermano
+% podemos definir que la pareja de Esposo, X, es hermano/a del Cunado.
+cunado(Esposo,Cunado):- pareja(Esposo, X), hermano(Cunado,X).
+
 
 legusta(maria,pasta).
 legusta(juan,carne).
